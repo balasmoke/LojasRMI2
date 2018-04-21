@@ -5,6 +5,9 @@
  */
 package Janelas;
 
+import javax.swing.JOptionPane;
+import jdk.nashorn.internal.scripts.JO;
+
 /**
  *
  * @author gmsil
@@ -32,7 +35,7 @@ public class Login extends javax.swing.JFrame {
         senha = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        botaoLogin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -40,7 +43,12 @@ public class Login extends javax.swing.JFrame {
 
         jLabel2.setText("Senha:");
 
-        jButton1.setText("Login");
+        botaoLogin.setText("Login");
+        botaoLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoLoginActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -56,7 +64,7 @@ public class Login extends javax.swing.JFrame {
                     .addComponent(senha, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(35, 35, 35)
-                .addComponent(jButton1)
+                .addComponent(botaoLogin)
                 .addContainerGap(32, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -74,7 +82,7 @@ public class Login extends javax.swing.JFrame {
                             .addComponent(jLabel2)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(52, 52, 52)
-                        .addComponent(jButton1)))
+                        .addComponent(botaoLogin)))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
 
@@ -98,6 +106,18 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void botaoLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoLoginActionPerformed
+        if(comparaLogin()){
+            //prosegue com as telas
+        }else{
+            JOptionPane.showMessageDialog(null, "Usuario ou senha Incorretos");
+        }
+    }//GEN-LAST:event_botaoLoginActionPerformed
+
+    private boolean comparaLogin(){
+        return true;//puxar um select para ver se existe algum usuario e senha no banco 
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -134,7 +154,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton botaoLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
