@@ -6,6 +6,7 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.*;
 import javax.swing.JOptionPane;
+import omum.Controle;
 
 public class Cliente {
     
